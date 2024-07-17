@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplos de getElementById</title>
+</head>
+<body>
+    <h1>Excluir elemento</h1>
+    <img src="https://img.freepik.com/fotos-premium/um-computador-antigo-com-a-palavra-ciaac-na-tela_759791-497.jpg" alt="" id="imagem">
+    <br>
+    <br>
+     <button onclick="encobrir()">Encobrir</button>
+     <button onclick="ressutir()">Ressurtir</button>
+     <div id="outraImagem">
+      <img src="https://img.freepik.com/fotos-premium/um-computador-antigo-com-a-palavra-ciaac-na-tela_759791-497.jpg" alt="" id="imagem">
+    <h1>Modificar o contéudo de um elemento</h1>
+     <div id="meuElemento">Conteúdo inicial</div>
+     <button onclick = "modificar()">Mudar</button>
+     <hr>
+     <h1>Alterar o estilo do elemento</h1>
+     <div id="cor">Texto colorido</div>
+     <button onclick = "colorir()">Colorir</button>
+     <hr>
+     <input id="texto" type="text" value="Texto Inicial">
+     <button onclick ="pegar()">Pegar texto input</button>
+     <p id="conteudo"></p>
+     <hr>
+     <h1>Esconder elemento</h1>
+     <div id="esconder">Texto para esconder</div>
+     <button onclick = "escondertexto()">Esconder</button>
+     <button onclick = "aparecertexto()">Aparecer</button>
+</body>
+    <script>
+        function encobrir(){
+            elemento = document.getElementById("imagem");
+            elemento.parentNode.removeChild(elemento);
+        }
+        function ressurtir(){
+            
+            elemento = document.getElementById("imagem");
+            elemento = document.getElementById("img");
+            container = document.getElementById("outraImagem");
+            newImg.src = "https://img.freepik.com/fotos-premium/um-computador-antigo-com-a-palavra-ciaac-na-tela_759791-497.jpg"
+            container.appendChild(newImg);
+        }
+        function escondertexto(){
+            var elemento = document.getElementById("esconder");
+            elemento.style.display = "none";
+        }
+        function aparecertexto(){
+            var elemento = document.getElementById("esconder");
+            elemento.style.display = "grid";
+        }
+
+
+        function modificar(){
+            var elemento = document.getElementById("meuElemento");
+            elemento.innerHTML = "Fernando Roberto"
+           
+    }
+        function colorir(){
+            var elemento = document.getElementById("cor");
+            elemento.style.fontSize = "50px";
+            elemento.style.color = 'lightgreen';
+            elemento.style.fontWeight = "bold";
+        }
+        function pegar(){
+            var elemento = document.getElementById("texto");
+            var conteudo = document.getElementById("conteudo");
+            var valor = elemento.value;
+            elemento.innerHTML = elemento.value;
+            conteudo.innerHTML = valor;
+        }
+    </script>
+</html>
